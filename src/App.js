@@ -1,56 +1,33 @@
+import { FormControl, MenuItem, Select } from '@material-ui/core';
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="app__header">
+        <h1>Covid-19 Info</h1>
+        <FormControl className='app__dropdown'>
+          <Select
+            variant='outlined'
+            value=''
           >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+            <MenuItem value='worldwide'>Worldwide</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
+
+      {/* Header */}
+      {/* Title + Select input field dropdown country */}
+
+      {/* InfoBox */}
+      {/* InfoBox */}
+      {/* InfoBox */}
+
+      {/* Table */}
+      {/* Graph */}
+
+      {/* Map */}
     </div>
   );
 }

@@ -6,8 +6,8 @@ import React, {
 import './App.scss';
 
 function App() {
-  const [countries, setCountries] = useState(['USA', 'UK', 'BRAZIL']);
-  const [country, setCountry] = useState('');
+  const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState('worldwide'); // by default it"s worldwide
 
   // Covid-19 data -> https://disease.sh/v3/covid-19/countries
 
@@ -19,14 +19,21 @@ function App() {
         // Each country will be an object
         {
           name: country.country, // United States, Spain, France
-          value: country.countryInfo.iso2 // USA, ES, FR
+          value: country.countryInfo.iso2 // USA, ES
         }
-      )
-      )
+      ))
+
+      setCountries(countries);
     }
 
     getCountriesData();
   }, []);
+
+  const onCountryChange = async (event) => {
+    const countryCode = event.target.value;
+
+    setCountry(countryCode);
+  };
 
   return (
     <div className="App">
@@ -35,14 +42,15 @@ function App() {
         <FormControl className='app__dropdown'>
           <Select
             variant='outlined'
-            value=''
+            value={country}
+            onChange={onCountryChange}
           >
-
+            <MenuItem value="worldwide">Worldwide</MenuItem>
             {countries.map((country) => (
               <MenuItem
-                country={country}
+                value={country.value}
               >
-                {country}
+                {country.name}
               </MenuItem>
             ))}
 

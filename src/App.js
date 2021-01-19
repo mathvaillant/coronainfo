@@ -6,11 +6,16 @@ import React, {
 import './App.scss';
 import InfoBox from './components/InfoBox';
 import Map from './components/Map';
+import Table from "./components/Table";
+import LineGraph from "./components/LineGraph";
+import { sortData } from './components/util';
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide'); // by default it"s worldwide
   const [countryInfo, setCountryInfo] = useState({});
+  const [tableData, setTableData] = useState([]);
+  
 
   /* when the page loads the first time, call the API and use worldwide info */
   useEffect(() => {
@@ -32,7 +37,9 @@ function App() {
           value: country.countryInfo.iso2 // USA, ES
         }
       ))
-
+      
+      const sortedData = sortData(data);
+      setTableData(sortedData)
       setCountries(countries);
     }
 
@@ -90,9 +97,9 @@ function App() {
       <Card className="app__right">
         <CardContent>
           <h3>Live Cases by Country</h3>
-          {/* Table */}
+          <Table countries={tableData} />
           <h3>WorldWide new cases</h3>
-          {/* Graph */}
+          <LineGraph />
         </CardContent>
         
       </Card>

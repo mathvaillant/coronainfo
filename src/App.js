@@ -26,6 +26,7 @@ function App() {
     })
   }, []);
 
+  /* get data from all countries and turn it into an array of objects */
   useEffect(() => {
     const getCountriesData = async () => {
       const response = await fetch('https://disease.sh/v3/covid-19/countries');
@@ -47,13 +48,14 @@ function App() {
   }, []);
 
 
-
+  /* get data when user selects a country */
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
 
     /* Turnary operator to check if user selected worldwide or a specific country */
     const url = countryCode === "worldwide" ? "https://disease.sh/v3/covid-19/all" : `https://disease.sh/v3/covid-19/countries/${countryCode}`
 
+    /* Then fetch the url -> worldwide or the country selected */
     await fetch(url)
     .then(response => response.json())
     .then(data => {

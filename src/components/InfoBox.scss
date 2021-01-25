@@ -1,6 +1,17 @@
 .infoBox {
   cursor: pointer;
   flex: 1;
+  background-color: #1b1b2a !important;
+  .MuiCardContent-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    h1 {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
 }
 
 /* Apply to all of the childs, except the last one */
@@ -9,19 +20,36 @@
 }
 
 .infoBox--selected {
-  border-top: 10px solid greenyellow;
+  border-top: 10px solid rgba(40, 167, 69, 0.12549);
 }
 
 .infoBox--red {
-  border-color: red;
+  border-color: #4d1129;
+  color: #fe0639;
+}
+
+.infoBox--grey {
+  border-color: #252735;
+  color: #6b747c !important;
+}
+
+.infoBox--green {
+  border-color: rgba(40, 167, 69, 0.12549);
+  color: #26a243;
 }
 
 .infoBox__cases--green {
-  color: greenyellow !important;
+  color: #26a243 !important;
+}
+
+.infoBox__title {
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .infoBox__cases {
-  color: #cc1034;
+  color: #fe0639;
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 0.5rem;

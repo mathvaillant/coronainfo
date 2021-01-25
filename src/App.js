@@ -83,10 +83,12 @@ function App() {
               variant='outlined'
               value={country}
               onChange={onCountryChange}
+              style={{border: "none", color:"#636B75"}}
             >
-              <MenuItem value="worldwide">Worldwide</MenuItem>
+              <MenuItem value="worldwide" style={{backgroundColor: "#161625", color:"#636B75", border: "none"}}>Worldwide</MenuItem>
               {countries.map((country) => (
                 <MenuItem
+                  style={{backgroundColor: "#161625", color:"#636B75"}}
                   value={country.value}
                 >
                   {country.name}
@@ -102,11 +104,12 @@ function App() {
             isRed
             active={casesType === "cases"} 
             onClick={(e) => setCasesType("cases")}
-            title="Coronavirus Cases" 
+            title="Cases" 
             cases={prettyPrintStat(countryInfo.todayCases)} 
             total={prettyPrintStat(countryInfo.cases)}
           />
-          <InfoBox 
+          <InfoBox
+            isGreen
             active={casesType === "recovered"} 
             onClick={(e) => setCasesType("recovered")}
             title="Recovered" 
@@ -114,7 +117,7 @@ function App() {
             total={prettyPrintStat(countryInfo.recovered)}
           />
           <InfoBox
-            isRed
+            isGray
             active={casesType === "deaths"}
             onClick={(e) => setCasesType("deaths")} 
             title="Deaths" 

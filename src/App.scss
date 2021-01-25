@@ -1,5 +1,13 @@
 body {
-  background-color: #999;
+  background-color: #161625;
+}
+
+fieldset {
+  display: none !important;
+}
+
+svg {
+  color: #fe0639 !important;
 }
 
 .app {
@@ -14,6 +22,10 @@ body {
       align-items: center;
       margin-bottom: 20px;
       justify-content: space-between;
+      h1 {
+        font-weight: 400;
+        color: #fe0639 !important;
+      }
     }
     .app__stats {
       display: flex;

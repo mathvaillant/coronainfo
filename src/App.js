@@ -8,6 +8,8 @@ import InfoBox from './components/InfoBox';
 import Map from './components/Map';
 import Table from "./components/Table";
 import LineGraph from "./components/LineGraph";
+import Vaccine from "./components/Vaccine";
+import Virus from "./virus.png";
 import { prettyPrintStat, sortData } from './components/util';
 import "leaflet/dist/leaflet.css";
 
@@ -77,7 +79,17 @@ function App() {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <h1>CoronaInfo</h1>
+          <span 
+            className="app__logoName">
+              Corona
+              <span 
+                className=".app__logoName__span" 
+                style={{color: "#4c75f2"}}
+              >
+                info
+                <img src={Virus} alt="virus.png"/>
+              </span>
+          </span>
           <FormControl className='app__dropdown'>
             <Select
               variant='outlined'
@@ -98,6 +110,8 @@ function App() {
             </Select>
           </FormControl>
         </div>
+
+        <Vaccine />
 
         <div className="app__stats">
           <InfoBox
@@ -141,7 +155,6 @@ function App() {
           <h3 className="app__right__graphTitle">WorldWide new {casesType}</h3>
           <LineGraph className="app__graph" casesType={casesType}/>
         </CardContent>
-        
       </Card>
     </div>
   );

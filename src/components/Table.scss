@@ -1,14 +1,16 @@
 .table {
   margin-top: 20px;
   overflow: scroll;
+  overflow-x: hidden;
   height: 400px;
-  background-color: #fff;
   tr:nth-of-type(odd) {
-    background-color: rgb(235, 235, 235);
+    background-color: #1d1d2f;
   }
   tr {
     display: flex;
     justify-content: space-between;
+    background: #20202f;
+    color: #6b757d;
     td {
       padding: 0.5rem;
     }

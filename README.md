@@ -1,4 +1,4 @@
-# coronainfo
+# Coronainfo App
 
 Check the lastest data for the Covid-19 world wide disease
 

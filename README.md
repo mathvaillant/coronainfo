@@ -1,4 +1,4 @@
-# Coronainfo App 
+# Coronainfo React App 
 
 Check the lastest data for the Covid-19 world wide disease 🦠 
 
